@@ -101,7 +101,7 @@ for train in trains:
     if state=='':
         arduino.write('OK')
     else:
-        arduino.write(train["infos"])
+        arduino.write(train["infos"].split(" ")[0])
     arduino.write(datetime.datetime.now().strftime(' U:%M'))
     arduino.flush()
     linewritten+=1
